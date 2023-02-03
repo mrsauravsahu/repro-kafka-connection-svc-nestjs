@@ -7,7 +7,7 @@ async function bootstrap() {
   app.connectMicroservice(KAFKA_CONFIG);
 
   await app.startAllMicroservices();
-  await app.listen(process.env.PORT || 80);
+  await app.listen(process.env.PORT || 80, '0.0.0.0');
   console.log(`Service listening at ${await app.getUrl()}`);
 }
 bootstrap();
